@@ -1,0 +1,30 @@
+﻿@page "/dayone"
+
+@using AdventOfCode._2021.Services;
+
+@inject IOneService OneService
+
+
+<h3>Day 1</h3>
+
+<button class="btn btn-primary" @onclick="Analyze">Click me</button>
+
+<button class="btn btn-primary" @onclick="SlidingScale">Click me</button>
+
+
+@code {
+
+
+    private void Analyze()
+    {
+        List<int> depths = new();
+
+        var count = OneService.AnalyzeSeaFloor(depths);
+    }
+
+    private void SlidingScale()
+    {
+        List<int> depths = new();
+        var count = OneService.AnalyzeSeaFloorSlidingScale(depths, 3);
+    }
+}
