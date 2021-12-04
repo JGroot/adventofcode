@@ -19,9 +19,17 @@ namespace AdventOfCode._2021.Test
         }
 
         [Theory, MemberData(nameof(PowerConsumption))]
-        public void PowerCompsumptionTest(List<int> power, int binaryLength, int answer)
+        public void PowerCompsumptionTest(List<string> power, int binaryLength, int answer)
         {
             var result = _service.GetPowerConsumption(power, binaryLength);
+
+            result.Should().Be(answer);
+        }
+
+        [Theory, MemberData(nameof(LifeSupport))]
+        public void LifeSupportTest(List<string> power, int binaryLength, int answer)
+        {
+            var result = _service.GetLifeSupportRating(power, binaryLength);
 
             result.Should().Be(answer);
         }
@@ -29,29 +37,17 @@ namespace AdventOfCode._2021.Test
         public static IEnumerable<object[]> PowerConsumption =>
             new List<object[]>
             {
-                new object[] {Example(), 5, 198 },
-                new object[] {PuzzleInput(), 12, 2003336 }
+                new object[] {Data.DayThreePower.Example(), 5, 198 },
+                new object[] { Data.DayThreePower.PuzzleInput(), 12, 2003336 }
             };
 
-        private static List<int> Example()
-            => new()
-            {
-                0b_00100,
-                0b_11110,
-                0b_10110,
-                0b_10111,
-                0b_10101,
-                0b_01111,
-                0b_00111,
-                0b_11100,
-                0b_10000,
-                0b_11001,
-                0b_00010,
-                0b_01010
-            };
+        public static IEnumerable<object[]> LifeSupport =>
+           new List<object[]>
+           {
+                new object[] {Data.DayThreePower.Example(), 5, 230 },
+                new object[] { Data.DayThreePower.PuzzleInput(), 12, 1877139 }
+           };
 
-        private static List<int> PuzzleInput()
-            => Data.DayThreePower.PuzzleInput();
-        
+       
     }
 }

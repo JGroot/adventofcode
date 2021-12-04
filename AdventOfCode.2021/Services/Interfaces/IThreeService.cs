@@ -4,6 +4,7 @@ namespace AdventOfCode._2021.Services
 {
     public interface IThreeService
     {
-        int GetPowerConsumption(List<int> power, int binaryLength);
+        int GetPowerConsumption(List<string> power, int binaryLength);
+        int GetLifeSupportRating(List<string> power, int binaryLength);
     }
 }
