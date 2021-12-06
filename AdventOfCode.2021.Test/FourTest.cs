@@ -23,11 +23,28 @@ namespace AdventOfCode._2021.Test
             result.Should().Be(answer); 
         }
 
+
+        [Theory, MemberData(nameof(BingoLoser))]
+        public void BingoLoserTest(List<BingoBoard> board, List<int> draws, int answer)
+        {
+            var result = _service.GetBingoLoser(board, draws);
+
+            result.Should().Be(answer);
+        }
+
         public static IEnumerable<object[]> BingoWinner()
             => new List<object[]>
             {
-                new object[] { Data.DayFourBingoBoards.ExampleBoards(), Data.DayFourBingoBoards.ExampleDraws(), 4512 }, //passes
-                new object[] { Data.DayFourBingoBoards.PuzzleInputBoards(), Data.DayFourBingoBoards.PuzzleInputDraws(), 000 } //not passing yet (answer unknown)
+                new object[] { Data.DayFourBingoBoards.SingleBoard(), Data.DayFourBingoBoards.PuzzleInputDraws(), 38594 },
+                new object[] { Data.DayFourBingoBoards.ExampleBoards(), Data.DayFourBingoBoards.ExampleDraws(), 4512 },
+                new object[] { Data.DayFourBingoBoards.PuzzleInputBoards(), Data.DayFourBingoBoards.PuzzleInputDraws(), 38594 }
             };
+
+        public static IEnumerable<object[]> BingoLoser()
+           => new List<object[]>
+           {
+                new object[] { Data.DayFourBingoBoards.ExampleBoards(), Data.DayFourBingoBoards.ExampleDraws(), 1924 },
+                new object[] { Data.DayFourBingoBoards.PuzzleInputBoards(), Data.DayFourBingoBoards.PuzzleInputDraws(), 21184 }
+           };
     }
 }

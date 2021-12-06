@@ -6,5 +6,6 @@ namespace AdventOfCode._2021.Services
     public interface IFourService
     {
         int GetBingoWinner(List<BingoBoard> boards, List<int> draws);
+        int GetBingoLoser(List<BingoBoard> boards, List<int> draws);
     }
 }
