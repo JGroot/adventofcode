@@ -21,8 +21,17 @@ namespace Year2022.Test
         {
             var input = File.ReadAllLines("Inputs/Day2.txt");
 
-            var result = _day2.TotalScore(input);
+            var result = _day2.StrategyOne(input);
             result.Should().Be(10718);
+        }
+
+        [TestMethod]
+        public void TotalScore2Test()
+        {
+            var input = File.ReadAllLines("Inputs/Day2.txt");
+
+            var result = _day2.StrategyTwo(input);
+            result.Should().Be(14652);
         }
     }
 }
