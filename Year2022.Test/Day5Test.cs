@@ -31,6 +31,18 @@
 
             result.Should().Be("TWSGQHNHL");
         }
+
+        [TestMethod]
+        public void StackOrganize2()
+        {
+            //var dict = GetStacksSample();
+            var dict = GetStacks();
+            var file = File.ReadAllLines("Inputs/Day5.txt");
+
+            var result = _day.Organize2(file, dict);
+
+            result.Should().Be("JNRSCDWPP");
+        }
         
         private Dictionary<int,Stack<char>> GetStacksSample()
         {
