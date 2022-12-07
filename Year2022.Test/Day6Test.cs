@@ -26,8 +26,8 @@
             var cipher = File.ReadAllText("Inputs/Day6.txt");
 
             var result = _day.PacketStartLocation2(cipher);
-            // 3288 too low
-            result.Should().Be(1929);
+            
+            result.Should().Be(3298);
         }
     }
 }
