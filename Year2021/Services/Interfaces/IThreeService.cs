@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AdventOfCode._2021.Services
+namespace Year2021.Services.Interfaces
 {
     public interface IThreeService
     {

@@ -1,8 +1,8 @@
-﻿using AdventOfCode._2021.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Year2021.Models;
 
-namespace AdventOfCode._2021.Test.Data
+namespace Year2021.Test.Data
 {
     public class DayFiveCoords
     {

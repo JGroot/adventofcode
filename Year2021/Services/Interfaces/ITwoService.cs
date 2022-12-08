@@ -1,7 +1,7 @@
-﻿using AdventOfCode._2021.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Year2021.Models;
 
-namespace AdventOfCode._2021.Services
+namespace Year2021.Services.Interfaces
 {
     public interface ITwoService
     {

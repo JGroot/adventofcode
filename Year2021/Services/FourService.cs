@@ -1,8 +1,9 @@
-﻿using AdventOfCode._2021.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Year2021.Models;
+using Year2021.Services.Interfaces;
 
-namespace AdventOfCode._2021.Services
+namespace Year2021.Services
 {
     public class FourService : IFourService
     {
@@ -25,17 +26,17 @@ namespace AdventOfCode._2021.Services
                     {
                         for (var i = 0; i < 5; i++)
                         {
-                            bool rowWin = !(board.Skip(i * 5).Take(5).Any(x => x.IsDrawn == false));
+                            bool rowWin = !board.Skip(i * 5).Take(5).Any(x => x.IsDrawn == false);
 
                             List<BingoSquare> column = new()
                             {
                                 board.ElementAt(i),
-                                board.ElementAt(i + (5 * 1)),
-                                board.ElementAt(i + (5 * 2)),
-                                board.ElementAt(i + (5 * 3)),
-                                board.ElementAt(i + (5 * 4))
+                                board.ElementAt(i + 5 * 1),
+                                board.ElementAt(i + 5 * 2),
+                                board.ElementAt(i + 5 * 3),
+                                board.ElementAt(i + 5 * 4)
                             };
-                            bool columnWin = !(column.Any(x => x.IsDrawn == false));
+                            bool columnWin = !column.Any(x => x.IsDrawn == false);
 
                             if (rowWin || columnWin)
                             {
@@ -60,39 +61,39 @@ namespace AdventOfCode._2021.Services
                 if (drawn.Count > 5)
                 {
                     var updated = boards.Select(x => new BingoBoard()
-                                 {
-                                     BoardId = x.BoardId,
-                                     IsWin = winners.Where(y => y.BoardId == x.BoardId).Select(y => y.IsWin).FirstOrDefault(),
-                                     BingoSquares = x.BingoSquares
+                    {
+                        BoardId = x.BoardId,
+                        IsWin = winners.Where(y => y.BoardId == x.BoardId).Select(y => y.IsWin).FirstOrDefault(),
+                        BingoSquares = x.BingoSquares
                                                     .Select(y => new BingoSquare()
                                                     {
                                                         Number = y.Number,
                                                         IsDrawn = drawn.Contains(y.Number)
                                                     }).ToList()
-                                 });;
+                    }); ;
 
-                
+
                     foreach (var board in updated)
                     {
                         for (var i = 0; i < 5; i++)
                         {
-                            bool rowWin = !(board.BingoSquares.Skip(i * 5).Take(5).Any(x => x.IsDrawn == false));
+                            bool rowWin = !board.BingoSquares.Skip(i * 5).Take(5).Any(x => x.IsDrawn == false);
 
                             List<BingoSquare> column = new()
                             {
                                 board.BingoSquares.ElementAt(i),
-                                board.BingoSquares.ElementAt(i + (5 * 1)),
-                                board.BingoSquares.ElementAt(i + (5 * 2)),
-                                board.BingoSquares.ElementAt(i + (5 * 3)),
-                                board.BingoSquares.ElementAt(i + (5 * 4))
+                                board.BingoSquares.ElementAt(i + 5 * 1),
+                                board.BingoSquares.ElementAt(i + 5 * 2),
+                                board.BingoSquares.ElementAt(i + 5 * 3),
+                                board.BingoSquares.ElementAt(i + 5 * 4)
                             };
-                            bool columnWin = !(column.Any(x => x.IsDrawn == false));
+                            bool columnWin = !column.Any(x => x.IsDrawn == false);
 
                             if (rowWin || columnWin)
                             {
                                 var sum = board.BingoSquares.Where(x => x.IsDrawn == false).Sum(x => x.Number);
                                 var finalScore = sum * draw;
-                                
+
                                 if (!board.IsWin)
                                 {
                                     board.IsWin = true;

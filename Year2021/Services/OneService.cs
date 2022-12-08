@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Year2021.Services.Interfaces;
 
-namespace AdventOfCode._2021.Services
+namespace Year2021.Services
 {
     public class OneService : IOneService
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace AdventOfCode._2021.Models
+namespace Year2021.Models
 {
     public class BingoBoard
-    { 
+    {
         public int BoardId { get; set; }
         public List<BingoSquare> BingoSquares { get; set; }
         public bool IsWin { get; set; }

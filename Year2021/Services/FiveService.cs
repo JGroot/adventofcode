@@ -1,9 +1,10 @@
-﻿using AdventOfCode._2021.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Year2021.Models;
+using Year2021.Services.Interfaces;
 
-namespace AdventOfCode._2021.Services
+namespace Year2021.Services
 {
     public class FiveService : IFiveService
     {

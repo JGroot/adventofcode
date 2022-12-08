@@ -1,10 +1,11 @@
-﻿using AdventOfCode._2021.Models;
-using AdventOfCode._2021.Services;
+﻿using Year2021.Services;
 using FluentAssertions;
 using System.Collections.Generic;
 using Xunit;
+using Year2021.Models;
+using Year2021.Services.Interfaces;
 
-namespace AdventOfCode._2021.Test
+namespace Year2021.Test
 {
     public class FiveTest
     {

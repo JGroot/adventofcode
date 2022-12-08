@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AdventOfCode._2021.Test.Data
+namespace Year2021.Test.Data
 {
     public static class DayThreePower
     {

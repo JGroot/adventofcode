@@ -1,8 +1,9 @@
-﻿using AdventOfCode._2021.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Year2021.Models;
+using Year2021.Services.Interfaces;
 
-namespace AdventOfCode._2021.Services
+namespace Year2021.Services
 {
     public class TwoService : ITwoService
     {
@@ -26,7 +27,7 @@ namespace AdventOfCode._2021.Services
             var depth = 0;
             var aim = 0;
 
-            foreach(var nav in navigations)
+            foreach (var nav in navigations)
             {
                 if (nav.Direction == Enums.Direction.Forward)
                 {

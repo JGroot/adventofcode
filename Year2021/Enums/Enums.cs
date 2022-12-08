@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode._2021.Enums
+﻿namespace Year2021.Enums
 {
     public enum Direction
     {

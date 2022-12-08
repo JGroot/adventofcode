@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode._2021.Models
+﻿namespace Year2021.Models
 {
     public class Coordinates
     {

@@ -5,11 +5,11 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Year2022.Test", "Year2022.Test\Year2022.Test.csproj", "{CCE9D0D4-76A4-4EAA-BD76-A86AD2099204}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode.2021", "Year2021\AdventOfCode.2021.csproj", "{126FDF2F-F15E-438C-9A17-1BF307FDE33F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Year2021", "Year2021\Year2021.csproj", "{126FDF2F-F15E-438C-9A17-1BF307FDE33F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Year2022", "Year2022\Year2022.csproj", "{CE11B0A9-3829-43C4-8C5D-BCF420E42D9E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode.2021.Test", "Year2021.Test\AdventOfCode.2021.Test.csproj", "{2AA1A719-577E-4227-931C-B6DD8AFE1A1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Year2021.Test", "Year2021.Test\Year2021.Test.csproj", "{2AA1A719-577E-4227-931C-B6DD8AFE1A1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
